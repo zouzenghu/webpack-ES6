@@ -1,0 +1,8 @@
+body {
+  background-color: blue($color: #000000);
+  div:nth-child(2) {
+    width: 500px;
+    height: 500px;
+    background: url("./微信图片_20190608210310.jpg");
+  }
+}

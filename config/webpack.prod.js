@@ -79,6 +79,8 @@ module.exports = merge(common, {
         test: /\.js$/,
         //忽略node_modules中的文件
         exclude: /node_modules/,
+        //只对src目录下做babel-loader转换
+        include: path.join(process.cwd(), "src"),
         use: [
           {
             loader: "babel-loader"

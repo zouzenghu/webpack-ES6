@@ -11,7 +11,22 @@ module.exports = merge(common, {
     hot: true,
     port: 8080,
     hotOnly: true, //禁止浏览器自动刷新
-    contentBase: path.join(process.cwd(), "dist")
+    contentBase: path.join(process.cwd(), "dist"),
+    proxy: {
+      //开发环境中的接口转发
+      //定义接口转发规则
+      "/react/api": {
+        //当我们去请求react/api时实际会走下面一个域名
+        target: "http://www.dell-lee.comm",
+        //处理https协议的接口转发
+        //secure:false,
+        pathRewrite: {
+          //如果我们去请求header会帮我们转发到demo
+          "header.json": "demo.json"
+        },
+        changeOrigin: true
+      }
+    }
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),

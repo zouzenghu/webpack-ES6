@@ -11,7 +11,8 @@
   "scripts": {
     "dev-build": "webpack --profile --json > statc.json ",
     "dev": "webpack-dev-server --env=dev",
-    "prod": "webpack --env=prod"
+    "prod": "webpack --env=prod",
+    "dll": "webpack --config ./config/webapck.dll.js"
   },
   "keywords": [],
   "author": "",
@@ -32,6 +33,8 @@
     "optimize-css-assets-webpack-plugin": "5.0.3",
     "postcss-loader": "3.0.0",
     "sass-loader": "7.1.0",
+    "ts-loader": "^6.0.4",
+    "typescript": "^3.5.3",
     "uglifyjs-webpack-plugin": "2.1.3",
     "url-loader": "2.0.1",
     "webpack": "4.35.3",
@@ -41,6 +44,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
+    "add-asset-html-webpack-plugin": "^3.1.3",
     "jquery": "3.4.1"
   }
 }
